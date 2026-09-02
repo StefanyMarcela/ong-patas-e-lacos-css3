@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ONG Patas & Laços</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>ONG Patas & Laços</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Cadastre-se</h2>
+            <p>
+                Faça seu cadastro e participe das ações da ONG Patas & Laços.
+            </p>
+    <form>
+
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf"
+               placeholder="000.000.000-00"
+               maxlength="14"
+               pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+               required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@email.com" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone"
+               placeholder="(00) 00000-0000"
+               maxlength="15"
+               pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+               required>
+
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep"
+               placeholder="00000-000"
+               maxlength="9"
+               pattern="[0-9]{5}-[0-9]{3}"
+               required>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" required>
+
+        <label for="interesse">Área de interesse:</label>
+        <select id="interesse" name="interesse" required>
+            <option value="">Selecione uma opção</option>
+            <option value="voluntariado">Voluntariado</option>
+            <option value="doacao">Doação</option>
+            <option value="adocao">Adoção</option>
+    </select>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 - ONG Patas & Laços</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
