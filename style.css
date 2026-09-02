@@ -35,7 +35,8 @@ nav a:hover {
 }
 
 form {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -95,4 +96,12 @@ section img {
     width: 650px;
     height: 600px;
     object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    section img {
+        width: 300px;
+        height: 250px;
+        object-fit: cover;
+    }
 }
