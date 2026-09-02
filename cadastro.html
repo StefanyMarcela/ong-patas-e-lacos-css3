@@ -23,7 +23,9 @@
                 Faça seu cadastro e participe das ações da ONG Patas & Laços.
             </p>
     <form>
-
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        
         <label for="nome">Nome completo:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -43,6 +45,10 @@
                maxlength="15"
                pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
                required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Endereço</legend>
 
         <label for="cep">CEP:</label>
         <input type="text" id="cep" name="cep"
@@ -60,21 +66,28 @@
         <label for="estado">Estado:</label>
         <input type="text" id="estado" name="estado" required>
 
+    </fieldset>
+
+    <fieldset>
+        <legend>Interesse</legend>
+
         <label for="interesse">Área de interesse:</label>
         <select id="interesse" name="interesse" required>
             <option value="">Selecione uma opção</option>
             <option value="voluntariado">Voluntariado</option>
             <option value="doacao">Doação</option>
             <option value="adocao">Adoção</option>
-    </select>
+        </select>
 
         <label for="mensagem">Mensagem:</label>
         <textarea id="mensagem" name="mensagem" rows="5"></textarea>
 
-        <button type="submit">Cadastrar</button>
+    </fieldset>
 
+        <button type="submit">Cadastrar</button>
+        
     </form>
-        </section>
+    </section>
     </main>
     <footer>
         <p>&copy; 2026 - ONG Patas & Laços</p>
