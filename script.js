@@ -31,12 +31,42 @@ cep.addEventListener("input", function () {
     this.value = valor;
 });
 
+cep.addEventListener("blur", function () {
+    const cepLimpo = this.value.replace(/\D/g, "");
+
+    if (cepLimpo.length !== 8) {
+        return;
+    }
+
+    fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`)
+        .then(response => response.json())
+        .then(dados => {
+
+            if (dados.erro) {
+                alert("CEP não encontrado.");
+                return;
+            }
+
+            document.getElementById("endereco").value = dados.logradouro;
+            document.getElementById("cidade").value = dados.localidade;
+            document.getElementById("estado").value = dados.uf;
+        })
+        .catch(() => {
+            alert("Não foi possível consultar o CEP.");
+        });
+});
+
 const formulario = document.querySelector("form");
 
 formulario.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    alert("Cadastro concluído com sucesso! Nossa equipe de voluntários entrará em contato com você em breve.");
+    const mensagem = document.getElementById("mensagem-sucesso");
+
+    mensagem.textContent =
+        "Cadastro concluído com sucesso! Nossa equipe de voluntários entrará em contato com você em breve.";
+
+    mensagem.style.display = "block";
 
     formulario.reset();
 });
