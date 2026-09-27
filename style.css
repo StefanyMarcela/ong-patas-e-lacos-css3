@@ -425,8 +425,7 @@ small {
 }
 
 /* CELULAR */
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     header h1 {
         font-size: var(--fonte-lg);
@@ -446,20 +445,23 @@ small {
         padding: var(--espaco-5) 0;
     }
 
-    section img {
-        height: 250px;
-    }
-
-    fieldset {
-        padding: var(--espaco-4);
+    /* CONSERTO DEFINITIVO */
+    .projetos {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
     }
 
     .projetos article {
-        grid-column: 1 / -1;
+        width: 90% !important;
+        max-width: 350px !important;
+        grid-column: auto !important;
     }
 
     .projetos article img {
-        height: 180px;
+        height: 180px !important;
+        width: 100% !important;
     }
 }
 
