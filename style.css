@@ -447,60 +447,47 @@ small {
 
 /* CELULAR */
 @media (max-width: 480px) {
-
-    header h1 {
-        font-size: var(--fonte-lg);
-    }
-
-    nav {
-    flex-direction: column;
-}
-
-.menu-hamburguer {
-    display: block;
-    background: none;
-    border: none;
-    color: var(--cor-branco);
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.menu-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-}
-
-.menu-links.ativo {
+    header {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    position: relative;
 }
 
-    nav a {
-        width: 100%;
-        max-width: 250px;
+header h1 {
+    order: 2;
+    margin-bottom: 0;
+    margin-left: 8px; 
+    font-size: var(--fonte-lg);
+    text-align: left;
+    flex: 1;
+}
+
+    .menu-hamburguer {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--cor-branco);
+        font-size: 2rem;
+        cursor: pointer;
     }
 
-    main {
-        width: min(100% - 1.5rem, 100%);
-        padding: var(--espaco-5) 0;
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--cor-primaria-dark);
+        padding: var(--espaco-4);
+        z-index: 10;
     }
 
-    .projetos {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 24px !important;
-    }
-
-    .projetos article {
-        width: 90% !important;
-        max-width: 350px !important;
-        grid-column: auto !important;
-    }
-
-    .projetos article img {
-        height: 180px !important;
-        width: 100% !important;
+    .menu-links.ativo {
+        display: flex;
     }
 }
 
@@ -516,7 +503,7 @@ small {
     }
 
     .projetos article {
-        width: 95% !important;
+        width: 95%;
     }
 }
 
@@ -526,25 +513,9 @@ small {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
     }
-}
-
-.projetos {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--espaco-5);
-}
-
-.projetos > h2,
-.projetos > p {
-    grid-column: 1 / -1;
-}
-
-.projetos article {
-    grid-column: span 4;
-    text-align: center;
 }
