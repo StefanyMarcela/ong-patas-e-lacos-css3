@@ -1,3 +1,10 @@
+const botaoMenu = document.querySelector(".menu-hamburguer");
+const menuLinks = document.querySelector(".menu-links");
+
+botaoMenu.addEventListener("click", function () {
+    menuLinks.classList.toggle("ativo");
+});
+
 const cpf = document.getElementById("cpf");
 
 cpf.addEventListener("input", function () {
@@ -70,3 +77,4 @@ formulario.addEventListener("submit", function (event) {
 
     formulario.reset();
 });
+
